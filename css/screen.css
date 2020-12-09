@@ -536,7 +536,7 @@ input:disabled {
     --custom-option-borderRadius: var(--global-borderRadius-3);
     --custom-option-borderRadius-examen: var(--global-borderRadius-4);
     --custom-option-border: var(--global-borderWidth-2) solid var(--global-borderColor);
-    --custom-option-border-focus: var(--global-borderWidth-2) solid var(--global-borderColor-focus);
+    --custom-option-border-focus: var(--global-borderWidth-2) solid var( --global-color-alpha-dark-purple);
 
     --custom-option-shadow-focus: var(--global-boxschadow-focus);
 
@@ -549,7 +549,7 @@ input:disabled {
 
     --custom-option-backgroundColor: var( --global-color-neutral-purple);
     --custom-option-backgroundColor-focus: var(--global-color-alpha-dark-purple);
-    --custom-option-symbolColor: var(--global-borderColor-focus);
+    --custom-option-symbolColor: var(--global-color-neutral-light-xxxx);
 
     /*----------------------------------------------------------------------------*/
 
@@ -565,6 +565,33 @@ input:disabled {
     color:var(--global-color-neutral-light-xxxx);
 }
 
+.c-option--hidden:hover + .c-custom-option .c-custom-option__fake-input--checkbox{
+    /*background-color: red;*/
+    color:var(--global-color-neutral-light-xxxx);
+    border:1px solid var( --global-color-alpha-dark-purple);
+}
+
+
+.c-option--hidden:hover + .c-custom-option .c-custom-option__fake-input--checkbox{
+    /*background-color: red;*/
+    color:var(--global-color-neutral-light-xxxx);
+}
+
+
+.c-option--hidden:checked + .c-custom-option .c-custom-option__fake-input--radio{
+    /*background-color: red;*/
+    background-color: var( --global-color-alpha-dark-purple);
+    --custom-option-symbolColor
+}
+
+
+
+
+.c-option--hidden:active + .c-custom-option .c-custom-option__fake-input--checkbox{
+    /*background-color: red;*/
+    color:var(--global-color-neutral-light-xxxx);
+    border:1px solid var( --global-color-alpha-dark-purple);
+}
 
 .c-custom-option__fake-input{
     transition: var(--custom-option-transition);
