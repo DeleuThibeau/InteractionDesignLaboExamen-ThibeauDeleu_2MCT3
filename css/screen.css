@@ -327,6 +327,12 @@ input:disabled {
     padding: 0;
 }
 
+.o-list__check{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
 /*
     Object: Button reset
     ---
@@ -558,7 +564,8 @@ input:disabled {
     --custom-option-symbolColor: var(--global-color-neutral-light-xx);
     width: auto;
     padding:calc(var(--global-baseline)*1.5);
-    border-radius: 25px;
+    border-radius: calc(var(--global-baseline)*3);
+    font-size: 0.875rem ;
 }
 
 .c-custom-option__fake-input--radio{
@@ -708,6 +715,10 @@ input:disabled {
 
 .u-text-sm {
     font-size: 14px;
+}
+
+.u-list__mb{
+    margin-bottom:0.75rem
 }
 
 /*------------------------------------*\
