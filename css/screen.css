@@ -32,7 +32,16 @@
     --global-color-neutral-dark-x: #616466;
     --global-color-neutral-dark-xx: #1B1918; /*#17191a; */
     
-    --global-color-alpha-dark: #009de6;
+    --global-color-alpha-dark: #4E00EA;
+    --global-color-alpha-light: #1ab6ff;
+    --global-color-alpha-opague: #1ab6ff4d; /* #1AB6FF + 30% */
+
+    --global-page-background: var(--global-color-alpha-dark);
+    --global-main-background: var(--global-color-neutral-light-xx);
+
+
+    
+    --global-color-alpha-dark: #FFF;
     --global-color-alpha-light: #1ab6ff;
     --global-color-alpha-opague: #1ab6ff4d; /* #1AB6FF + 30% */
 
@@ -41,7 +50,13 @@
     --global-color-neutral-purple-bg: #F6F5F7;
 
     --global-page-background: var(--global-color-alpha-dark);
-    --global-main-background: var(--global-color-neutral-light-xx);
+    --global-main-background: var(--global-color-neutral-dark-xx);
+
+    --global-color-neutral-light-xxxx: #FFF;
+    --global-color-neutral-dark-x:#A2A1A6;
+    --global-color-neutral-dark-xx: #47454D;
+    --global-color-neutral-dark-xxx: #17161A;
+    --global-color-neutral-dark-xxxx: #000;
 
 
     /* fonts */
@@ -394,7 +409,7 @@ input:disabled {
 
 .c-main{
     --c-main-padding: 2rem; /* 32px = 2rem * 16 */
-    background: var(--global-main-background);
+    background: var(--global-color-neutral-light-xxxx);
     padding: var(--c-main-padding);
 
     border-radius: calc(4rem / 16);
@@ -496,10 +511,10 @@ input:disabled {
 }
 
 .c-custom-option{
-    --custom-option-borderColor: var(--global-borderColor);
-    --custom-option-borderColor-hover: var(--global-borderColor-focus);
-    --custom-option-borderColor-focus: var(--global-borderColor-focus);
-    --custom-option-borderColor-checked: var(--global-borderColor-focus);
+    --custom-option-borderColor: black;
+    --custom-option-borderColor-hover: var(--global-color-alpha-dark-purple);
+    --custom-option-borderColor-focus: var(--global-color-alpha-dark-purple);
+    --custom-option-borderColor-checked: var(--global-color-alpha-dark-purple);
 
     --custom-option-borderRadius: var(--global-borderRadius-3);
     --custom-option-borderRadius-examen: var(--global-borderRadius-4);
@@ -516,7 +531,7 @@ input:disabled {
     --custom-option-height: 1rem;
 
     --custom-option-backgroundColor: var(--global-input-backgroundColor);
-    --custom-option-backgroundColor-focus: var(--global-input-backgroundColor);
+    --custom-option-backgroundColor-focus: var(--global-color-alpha-dark-purple);
     --custom-option-symbolColor: var(--global-borderColor-focus);
 
     /*----------------------------------------------------------------------------*/
