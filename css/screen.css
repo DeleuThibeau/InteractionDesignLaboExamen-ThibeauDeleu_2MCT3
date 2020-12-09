@@ -36,6 +36,9 @@
     --global-color-alpha-light: #1ab6ff;
     --global-color-alpha-opague: #1ab6ff4d; /* #1AB6FF + 30% */
 
+    --global-color-alpha-dark-purple:#4E00EA;
+    --global-color-neutral-purple: #DCDAE0;
+
     --global-page-background: var(--global-color-alpha-dark);
     --global-main-background: var(--global-color-neutral-light-xx);
 
@@ -619,14 +622,21 @@ input:disabled {
 }
 
 .w3-border{
-    height: 24px;
-    background-color: red;
+    height: 0.5rem;
+    background-color: var(--global-color-neutral-purple);
     width: 67.96%;
+    border-radius: var(--global-borderRadius-4);
+    margin:0;
+
 }
 
 .w3-grey{
-    background-color: black;
+    background-color: var(--global-color-alpha-dark-purple);
+    height: 0.5rem;
+    width: 75%;
+    border-radius: var(--global-borderRadius-4);
 }
+
 
 /*------------------------------------*\
 #UTILITIES
