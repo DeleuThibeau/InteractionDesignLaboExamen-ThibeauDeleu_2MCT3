@@ -1,6 +1,23 @@
 /*------------------------------------*\
-#FONTS
+  #FONTS
 \*------------------------------------*/
+@font-face{
+    font-family: "IBM Plex Sans";
+    font-weight: 400;
+    src: url("../fonts/IBMPlexSans-Regular.ttf") format("ttf")
+}
+
+@font-face{
+    font-family: "IBM Plex Sans";
+    font-weight: 500;
+    src: url("../fonts/IBMPlexSans-Medium.ttf") format("ttf")
+}
+
+@font-face{
+    font-family: "IBM Plex Sans";
+    font-weight: 600;
+    src: url("../fonts/IBMPlexSans-Bold.ttf") format("ttf")
+}
 
 /*------------------------------------*\
 #Variables
@@ -8,14 +25,61 @@
 
 :root {
     /* colors */
+    --global-color-neutral-light-xx: #ffffff;
+    --global-color-neutral-light-x: #f0f1f2;
+    --global-color-neutral-light: #c6cacc;
+    --global-color-neutral-dark: #a1a5a6;
+    --global-color-neutral-dark-x: #616466;
+    --global-color-neutral-dark-xx: #1B1918; /*#17191a; */
+    
+    --global-color-alpha-dark: #009de6;
+    --global-color-alpha-light: #1ab6ff;
+    --global-color-alpha-opague: #1ab6ff4d; /* #1AB6FF + 30% */
+
+    --global-page-background: var(--global-color-alpha-dark);
+    --global-main-background: var(--global-color-neutral-light-xx);
+
 
     /* fonts */
+    --global-font-size: 1rem; /* 16px */
+    --global-font-size-lg: calc(28rem / 16); /* 28px */
+
+    --global-font-weight-regular: 400;
+    --global-font-weight-medium: 500;
+
+    --global-text-color-dark: var(--global-color-neutral-dark-xx);
+    --global-text-color: var(--global-color-neutral-dark-x);
+    --global-text-color-light: var(--global-color-neutral-light-xx);
 
     /* shadows */
+    --global-main-shadow: 0px calc(1rem / 16)  calc(4rem / 16) rgba(0,0,0,0.15);
+    --global-boxschadow-focus: 0 0 0 calc(3rem / 16) var(--global-color-alpha-opague);
 
     /* borders */
+    --global-borderColor: var(--global-color-neutral-light);
+    --global-borderColor-focus: var(--global-color-alpha-dark);
+
+    --global-borderRadius-3: calc(3rem / 16);
+    --global-borderRadius-2: calc(2rem / 16);
+
+    --global-borderWidth-3: calc(3rem / 16);
+    --global-borderWidth-2: calc(2rem / 16);
+
+    --global-border: var(--global-borderWidth-2) solid var(--global-borderColor);
+    --global-border-focus: var(--global-borderWidth-2) solid var(--global-borderColor-focus);
 
     /* transitions */
+    --global-transitionTiming-alpha: .1s ease-out;
+
+    /* whitespace */
+    --global-baseline: 0.5rem;
+    --global-whitespace-xs:     calc(var(--global-baseline) / 2);       /* = 4px */
+    --global-whitespace-sm:     calc(var(--global-baseline) );          /* = 8px */
+    --global-whitespace-md:     calc(var(--global-baseline) * 2);       /* = 16px */
+    --global-whitespace:        calc(var(--global-baseline) * 3);       /* = 24px */
+    --global-whitespace-lg:     calc(var(--global-whitespace-md) * 2);  /* = 32px */
+    --global-whitespace-xl:     calc(var(--global-whitespace) * 2);     /* = 48px */
+    --global-whitespace-xxl:    calc(var(--global-baseline-xl) * 2);    /* = 72px */
 }
 
 /*------------------------------------*\
@@ -31,12 +95,14 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: sans-serif;
-    color: Black;
+    font-weight: 400;
+    font-family:  "IBM Plex Sans", sans-serif;
+    color: var(--global-text-color);
+    background: var(--global-page-background);
+
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
 }
 
 *,
@@ -88,25 +154,26 @@ img {
 h1,
 h2,
 h3 {
-    font-weight: 600;
+    font-weight: var(--global-font-weight-medium);
 }
 
 h1 {
-    font-size: 36px;
-    line-height: 48px;
-    margin: 0 0 24px;
+    font-size: var(--global-font-size-lg);
+    line-height: calc(37rem / 16);
+    margin: 0 0 var(--global-whitespace-md);
+    color: var(--global-text-color-dark);
 }
 
 h2 {
     font-size: 32px;
     line-height: 40px;
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 h3 {
     font-size: 26px;
     line-height: 32px;
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 h4,
@@ -115,7 +182,7 @@ h6 {
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 p,
@@ -125,7 +192,7 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace-lg);
 }
 
 ul,
@@ -217,27 +284,8 @@ input:disabled {
 /* size modifiers */
 
 .o-row--lg {
-    padding-top: 48px;
-    padding-bottom: 24px;
-}
-
-.o-row--xl {
-    padding-top: 72px;
-    padding-bottom: 48px;
-}
-
-@media (min-width: 768px) {
-    .o-row {
-        padding-left: 48px;
-        padding-right: 48px;
-    }
-}
-
-@media (min-width: 992px) {
-    .o-row--xl {
-        padding-top: 96px;
-        padding-bottom: 72px;
-    }
+    padding-top: 3rem; /* 48px = 3rem * 16 */
+    padding-bottom: 1.5rem; /* 25px = 1.5rem * 16 */
 }
 
 /*
@@ -264,7 +312,7 @@ input:disabled {
 }
 
 .o-section + .o-section {
-    padding-top: 8px;
+    padding-top: var(--global-whitespace-lg); /* 32px */
 }
 
 /*
@@ -328,6 +376,229 @@ input:disabled {
 #COMPONENTS
 \*------------------------------------*/
 
+/*
+    Component: Main
+    ---
+*/
+
+.c-main{
+    --c-main-padding: 2rem; /* 32px = 2rem * 16 */
+    background: var(--global-main-background);
+    padding: var(--c-main-padding);
+
+    border-radius: calc(4rem / 16);
+    border-top: 0.5rem solid var(--global-color-alpha-light);  /* 8px = 0.5rem * 16 */
+    box-shadow: var(--global-main-shadow);
+}
+
+.c-subtitle{
+    font-weight: var(--global-font-weight-medium);
+    line-height: var(--global-whitespace); /* 24px */
+    margin: 0 0 calc(10rem / 16) 0;
+    color: var(--global-text-color-dark);
+    display: block;
+}
+
+
+/*
+    Component: Button
+    ---
+*/
+
+.c-button{
+    --c-button-transition: var(--global-transitionTiming-alpha);
+    --c-button-boxShadow-focus: var(--global-boxschadow-focus);
+
+    --c-button-backgroundColor: var(--global-color-alpha-dark);
+    --c-button-backgroundColor-active: var(--global-color-alpha-light);
+    --c-button-borderRadius:  var(--global-borderRadius-3);
+
+    --c-button-textColor: var(--global-color-neutral-light-xx);
+    --c-button-textWeight: var(--global-font-weight-medium);
+
+    min-width: 100%;
+    padding: var(--global-whitespace-md);
+
+    background-color: var(--c-button-backgroundColor);
+    color: var(--c-button-textColor);
+    font-weight: var( --c-button-textWeight);
+
+    border-radius: var( --c-button-borderRadius);
+    transition: var(--c-button-transition);
+}
+
+.c-button:hover,
+.c-button:focus{
+    box-shadow: var(--c-button-boxShadow-focus);
+}
+
+.c-button:active,
+.c-button:visited{
+    --c-button-backgroundColor: var(--c-button-backgroundColor-active);
+    outline: none;
+}
+
+/*
+    Component: Input
+    ---
+*/
+
+.c-input{
+    --c-input-borderRadius: var(--global-borderRadius-2);
+    --c-input-border: var(--global-border);
+    --c-input-border-focus: var(--global-border-focus);
+    --c-input-boxschadow-focus: var(--global-boxschadow-focus);
+
+    --c-input-text-color: var(--global-color-neutral-dark);
+    --c-input-text-color-focus: var(--global-text-color);
+
+    --c-input-transition: var(--global-transitionTiming-alpha);
+
+
+    all: unset; /* reset */
+    min-width: 100%;
+    border: var(--c-input-border);
+    border-radius: var( --c-input-borderRadius);
+    padding: var(--global-whitespace-md);
+    box-sizing:border-box;
+
+    color: var(--c-input-text-color);
+
+    transition: var(--c-input-transition);
+}
+
+.c-input:hover,
+.c-input:focus{
+    --c-input-border: var(--c-input-border-focus);
+    --c-input-text-color: var(--c-input-text-color-focus);
+
+    box-shadow: var(--c-input-boxschadow-focus);
+}
+
+/*
+    Component: Checkbox + radio
+    ---
+*/
+
+.c-option {
+    margin-right: var(--global-whitespace-sm);
+}
+
+.c-custom-option{
+    --custom-option-borderColor: var(--global-borderColor);
+    --custom-option-borderColor-hover: var(--global-borderColor-focus);
+    --custom-option-borderColor-focus: var(--global-borderColor-focus);
+    --custom-option-borderColor-checked: var(--global-borderColor-focus);
+
+    --custom-option-borderRadius: var(--global-borderRadius-3);
+    --custom-option-border: var(--global-borderWidth-2) solid var(--global-borderColor);
+    --custom-option-border-focus: var(--global-borderWidth-2) solid var(--global-borderColor-focus);
+
+    --custom-option-shadow-focus: var(--global-boxschadow-focus);
+
+    --custom-option-transition: var(--global-transitionTiming-alpha);
+    --custom-option__symbol-opacity: 0;
+    --custom-option__symbol-width: calc(10rem / 16);
+
+    --custom-option-width: 1rem; 
+    --custom-option-height: 1rem;
+
+    --custom-option-backgroundColor: var(--global-input-backgroundColor);
+    --custom-option-backgroundColor-focus: var(--global-input-backgroundColor);
+    --custom-option-symbolColor: var(--global-borderColor-focus);
+
+    /*----------------------------------------------------------------------------*/
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    transition: var(--custom-option-transition);
+}
+
+.c-option--hidden:checked + .c-custom-option{
+    /*background-color: red;*/
+}
+
+.c-custom-option__fake-input{
+    transition: var(--custom-option-transition);
+}
+
+.c-custom-option__symbol{
+    display: block;
+    opacity: var(--custom-option__symbol-opacity);
+    transition: var(--custom-option-transition);
+}
+
+.c-option--hidden:checked + .c-custom-option .c-custom-option__fake-input{
+    border-color: var(--custom-option-borderColor-checked);
+}
+
+.c-option--hidden:checked + .c-custom-option .c-custom-option__symbol{
+    --custom-option__symbol-opacity: 100;
+}
+
+.c-custom-option__fake-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: var(--custom-option-width);
+    height:  var(--custom-option-height);
+    border: var(--custom-option-border);
+    margin-right: 8px;
+    background-color: var(--custom-option-backgroundColor);
+}
+
+.c-custom-option__fake-input--checkbox{
+    border-radius: var(--custom-option-borderRadius);
+    --custom-option-backgroundColor-focus: var(--global-borderColor-focus);;
+    --custom-option-symbolColor: var(--global-color-neutral-light-xx);
+}
+
+.c-custom-option__fake-input--radio{
+    border-radius: 100%;
+}
+
+.c-custom-option__fake-input--checkbox .c-custom-option__symbol{ /* uses svg */
+    width: var(--custom-option__symbol-width);
+    height: var(--custom-option__symbol-width);
+    fill: var(--custom-option-symbolColor);
+}
+
+.c-custom-option__fake-input--radio .c-custom-option__symbol{  /* uses span */
+    --custom-option__symbol-width: calc(6rem / 16);
+    width: var(--custom-option__symbol-width);
+    height: var(--custom-option__symbol-width);
+    background-color: var(--custom-option-symbolColor); /* we use a round div */
+    border-radius: 100%;
+}
+
+
+.c-option--hidden:hover + .c-custom-option .c-custom-option__fake-input{
+    --custom-option-borderColor: var(--custom-option-borderColor-hover);
+    --custom-option-border: var(--custom-option-border-focus);
+
+    box-shadow: var(--custom-option-shadow-focus);
+}
+
+.c-option--hidden:hover + .c-custom-option .c-custom-option__fake-input--checkbox{
+    --custom-option__symbol-opacity: 100;
+    --custom-option-backgroundColor: var(--global-borderColor-focus);
+    --custom-option-symbolColor: var(--global-color-neutral-light-xx);
+}
+
+.c-option--hidden:focus + .c-custom-option .c-custom-option__fake-input,
+.c-option--hidden:active + .c-custom-option .c-custom-option__fake-input{
+    --custom-option-border: var(--custom-option-border-focus);
+}
+
+.c-option--hidden:checked + .c-custom-option .c-custom-option__fake-input--checkbox{
+    --custom-option-backgroundColor: var(--global-borderColor-focus);
+    --custom-option-symbolColor: var(--global-color-neutral-light-xx);
+}
+
+
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
@@ -380,6 +651,10 @@ input:disabled {
     margin-bottom: 48px !important;
 }
 
+.u-margin-bottom-clear{
+    margin-bottom: 0;
+}
+
 /*
     Utilities: max-width
     ---
@@ -391,11 +666,11 @@ input:disabled {
 }
 
 .u-max-width-sm {
-    max-width: 32em !important;
+    max-width: 32em !important; /* 512px = 32em * 16 */
 }
 
 .u-max-width-md {
-    max-width: 50em !important;
+    max-width: 50em !important; 
 }
 
 .u-max-width-lg {
