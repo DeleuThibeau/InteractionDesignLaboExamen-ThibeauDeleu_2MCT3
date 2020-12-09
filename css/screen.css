@@ -298,7 +298,7 @@ input:disabled {
 .o-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 79.5em; /* 79.5 * 16px = 1272 */
+    max-width: 32em; /* 79.5 * 16px = 1272 */
     width: 100%;
 }
 
@@ -423,7 +423,7 @@ input:disabled {
     --c-button-textColor: var(--global-color-neutral-light-xx);
     --c-button-textWeight: var(--global-font-weight-medium);
 
-    min-width: 100%;
+    min-width: 50%;
     padding: var(--global-whitespace-md);
 
     background-color: var(--c-button-backgroundColor);
