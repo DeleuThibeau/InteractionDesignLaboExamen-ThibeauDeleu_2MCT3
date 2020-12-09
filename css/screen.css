@@ -38,6 +38,7 @@
 
     --global-color-alpha-dark-purple:#4E00EA;
     --global-color-neutral-purple: #DCDAE0;
+    --global-color-neutral-purple-bg: #F6F5F7;
 
     --global-page-background: var(--global-color-alpha-dark);
     --global-main-background: var(--global-color-neutral-light-xx);
@@ -102,7 +103,7 @@ html {
     font-weight: 400;
     font-family:  "IBM Plex Sans", sans-serif;
     color: var(--global-text-color);
-    background: var(--global-page-background);
+    background: var(--global-color-neutral-purple-bg);
 
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -397,7 +398,7 @@ input:disabled {
     padding: var(--c-main-padding);
 
     border-radius: calc(4rem / 16);
-    border-top: 0.5rem solid var(--global-color-alpha-light);  /* 8px = 0.5rem * 16 */
+    border-top: 0.5rem solid var(--global-color-alpha-dark-purple);  /* 8px = 0.5rem * 16 */
     box-shadow: var(--global-main-shadow);
 }
 
@@ -621,26 +622,40 @@ input:disabled {
     align-items: center;
 }
 
-.c-progress{
+
+
+.progress {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 100%
+}
+.step {
+    display: block;
+    font-size: 14px;
 
 }
-
-.w3-border{
+.bar {
+    content: "";
+    position: relative;
+    display: block;
+    width: calc(100% - 164px); /* Zelfde waarde als hierboven waarmee je moet spelen om het mooi naast elkaar te krijgen */
     height: 0.5rem;
+    border-radius: 3px;
     background-color: var(--global-color-neutral-purple);
-    width: 67.96%;
     border-radius: var(--global-borderRadius-4);
-    margin:0;
-
 }
-
-.w3-grey{
-    background-color: var(--global-color-alpha-dark-purple);
+.bar-progress {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 0.5rem;
-    width: 75%;
+    width: 66.666%;
+    background-color: var(--global-color-alpha-dark-purple);
     border-radius: var(--global-borderRadius-4);
 }
 
