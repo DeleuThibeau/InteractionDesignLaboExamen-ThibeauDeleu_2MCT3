@@ -2,21 +2,21 @@
   #FONTS
 \*------------------------------------*/
 @font-face{
-    font-family: "IBM Plex Sans";
+    font-family: "Inter Web";
     font-weight: 400;
-    src: url("../fonts/IBMPlexSans-Regular.ttf") format("ttf")
+    src: url("../fonts/Inter-UI-Regular.woff2") format("ttf")
 }
 
 @font-face{
     font-family: "IBM Plex Sans";
     font-weight: 500;
-    src: url("../fonts/IBMPlexSans-Medium.ttf") format("ttf")
+    src: url("../fonts/Inter-UI-Medium.woff2") format("ttf")
 }
 
 @font-face{
     font-family: "IBM Plex Sans";
     font-weight: 600;
-    src: url("../fonts/IBMPlexSans-Bold.ttf") format("ttf")
+    src: url("../fonts/Inter-UI-Bold.woff2") format("ttf")
 }
 
 /*------------------------------------*\
@@ -46,6 +46,7 @@
     --global-color-alpha-opague: #1ab6ff4d; /* #1AB6FF + 30% */
 
     --global-color-alpha-dark-purple:#4E00EA;
+    --global-color-alpha-dark-purple-light:#6A00FD;
     --global-color-neutral-purple: #DCDAE0;
     --global-color-neutral-purple-bg: #F6F5F7;
 
@@ -116,7 +117,7 @@ html {
     font-size: 16px;
     line-height: 1.5;
     font-weight: 400;
-    font-family:  "IBM Plex Sans", sans-serif;
+    font-family:  "Inter Web", sans-serif;
     color: var(--global-color-neutral-dark-xx);
     background: var(--global-color-neutral-purple-bg);
 
@@ -506,11 +507,12 @@ input:disabled {
     color: var(--c-input-text-color);
 
     transition: var(--c-input-transition);
+    font-weight: bold;
 }
 
 .c-input:hover,
 .c-input:focus{
-    --c-input-border: var(--c-input-border-focus);
+    --c-input-border: var(--global-color-alpha-dark-purple);
     --c-input-text-color: var(--c-input-text-color-focus);
 
     box-shadow: var(--c-input-boxschadow-focus);
@@ -527,7 +529,7 @@ input:disabled {
 
 .c-custom-option{
     --custom-option-borderColor: black;
-    --custom-option-borderColor-hover: var(--global-color-alpha-dark-purple);
+    --custom-option-borderColor-hover: var( --global-color-alpha-dark-purple);
     --custom-option-borderColor-focus: var(--global-color-alpha-dark-purple);
     --custom-option-borderColor-checked: var(--global-color-alpha-dark-purple);
 
@@ -545,7 +547,7 @@ input:disabled {
     --custom-option-width: 1rem; 
     --custom-option-height: 1rem;
 
-    --custom-option-backgroundColor: var(--global-input-backgroundColor);
+    --custom-option-backgroundColor: var( --global-color-neutral-purple);
     --custom-option-backgroundColor-focus: var(--global-color-alpha-dark-purple);
     --custom-option-symbolColor: var(--global-borderColor-focus);
 
@@ -558,9 +560,11 @@ input:disabled {
     transition: var(--custom-option-transition);
 }
 
-.c-option--hidden:checked + .c-custom-option{
+.c-option--hidden:checked + .c-custom-option .c-custom-option__fake-input--checkbox{
     /*background-color: red;*/
+    color:var(--global-color-neutral-light-xxxx);
 }
+
 
 .c-custom-option__fake-input{
     transition: var(--custom-option-transition);
@@ -622,7 +626,7 @@ input:disabled {
 
 
 .c-option--hidden:hover + .c-custom-option .c-custom-option__fake-input{
-    --custom-option-borderColor: var(--custom-option-borderColor-hover);
+    --custom-option-borderColor: var( --global-color-alpha-dark-purple);
     --custom-option-border: var(--custom-option-border-focus);
 
     box-shadow: var(--custom-option-shadow-focus);
@@ -630,7 +634,7 @@ input:disabled {
 
 .c-option--hidden:hover + .c-custom-option .c-custom-option__fake-input--checkbox{
     --custom-option__symbol-opacity: 100;
-    --custom-option-backgroundColor: var(--global-borderColor-focus);
+    --custom-option-backgroundColor: var( --global-color-alpha-dark-purple);
     --custom-option-symbolColor: var(--global-color-neutral-light-xx);
 }
 
@@ -640,7 +644,7 @@ input:disabled {
 }
 
 .c-option--hidden:checked + .c-custom-option .c-custom-option__fake-input--checkbox{
-    --custom-option-backgroundColor: var(--global-borderColor-focus);
+    --custom-option-backgroundColor: var(--global-color-alpha-dark-purple);
     --custom-option-symbolColor: var(--global-color-neutral-light-xx);
 }
 
