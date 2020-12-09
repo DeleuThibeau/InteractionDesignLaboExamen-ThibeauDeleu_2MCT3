@@ -611,6 +611,23 @@ input:disabled {
 }
 
 
+
+.c-next{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.w3-border{
+    height: 24px;
+    background-color: red;
+    width: 67.96%;
+}
+
+.w3-grey{
+    background-color: black;
+}
+
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
@@ -661,10 +678,6 @@ input:disabled {
 
 .u-mb-xl {
     margin-bottom: 48px !important;
-}
-
-.u-margin-bottom-clear{
-    margin-bottom: 0;
 }
 
 /*
