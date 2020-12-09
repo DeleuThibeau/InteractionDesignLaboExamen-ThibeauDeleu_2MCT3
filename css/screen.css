@@ -59,6 +59,7 @@
     --global-borderColor: var(--global-color-neutral-light);
     --global-borderColor-focus: var(--global-color-alpha-dark);
 
+    --global-borderRadius-4: calc(3rem / 8);
     --global-borderRadius-3: calc(3rem / 16);
     --global-borderRadius-2: calc(2rem / 16);
 
@@ -411,7 +412,7 @@ input:disabled {
 
     --c-button-backgroundColor: var(--global-color-alpha-dark);
     --c-button-backgroundColor-active: var(--global-color-alpha-light);
-    --c-button-borderRadius:  var(--global-borderRadius-3);
+    --c-button-borderRadius:  var(--global-borderRadius-4);
 
     --c-button-textColor: var(--global-color-neutral-light-xx);
     --c-button-textWeight: var(--global-font-weight-medium);
@@ -491,6 +492,7 @@ input:disabled {
     --custom-option-borderColor-checked: var(--global-borderColor-focus);
 
     --custom-option-borderRadius: var(--global-borderRadius-3);
+    --custom-option-borderRadius-examen: var(--global-borderRadius-4);
     --custom-option-border: var(--global-borderWidth-2) solid var(--global-borderColor);
     --custom-option-border-focus: var(--global-borderWidth-2) solid var(--global-borderColor-focus);
 
@@ -554,6 +556,9 @@ input:disabled {
     border-radius: var(--custom-option-borderRadius);
     --custom-option-backgroundColor-focus: var(--global-borderColor-focus);;
     --custom-option-symbolColor: var(--global-color-neutral-light-xx);
+    width: auto;
+    padding:calc(var(--global-baseline)*1.5);
+    border-radius: 25px;
 }
 
 .c-custom-option__fake-input--radio{
