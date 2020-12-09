@@ -124,6 +124,7 @@ html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    min-width: 100vh;
 }
 
 *,
@@ -300,13 +301,14 @@ input:disabled {
 .o-row {
     position: relative;
     padding: 24px 24px 0;
+    min-height: 100vh;
 }
 
 /* size modifiers */
 
 .o-row--lg {
-    padding-top: 3rem; /* 48px = 3rem * 16 */
-    padding-bottom: 1.5rem; /* 25px = 1.5rem * 16 */
+    padding-top: 4rem; /* 48px = 3rem * 16 */
+    padding-bottom: 3rem; /* 25px = 1.5rem * 16 */
 }
 
 /*
