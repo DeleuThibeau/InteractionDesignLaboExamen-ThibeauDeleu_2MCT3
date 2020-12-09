@@ -621,6 +621,13 @@ input:disabled {
     align-items: center;
 }
 
+.c-progress{
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+}
+
 .w3-border{
     height: 0.5rem;
     background-color: var(--global-color-neutral-purple);
@@ -636,7 +643,6 @@ input:disabled {
     width: 75%;
     border-radius: var(--global-borderRadius-4);
 }
-
 
 /*------------------------------------*\
 #UTILITIES
